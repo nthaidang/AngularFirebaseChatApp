@@ -1,3 +1,59 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar class="extend-toolbar">Angular Firebase Chat App</md-toolbar>
+<section *ngIf="!isAuth" id="home-screen">
+
+  <button md-raised-button (click)="login('google')"> 
+    <img class="logo" width="30" src="https://logo.clearbit.com/google.com" />Use Google Account
+  </button>
+  <button md-raised-button (click)="login('github')">
+    <img class="logo" width="30" src="https://logo.clearbit.com/github.com" />Use Github Account
+  </button>
+  <button md-raised-button (click)="login('facebook')">
+    <img class="logo" width="30" src="https://logo.clearbit.com/facebook.com" />Use Facebook Account
+  </button>
+  <button md-raised-button (click)="login('twitter')">
+    <img class="logo" width="30" src="https://logo.clearbit.com/twitter.com" />Use Twitter Account
+  </button>
+</section>
+<section *ngIf="isAuth" id="container">
+  <md-card>
+    <md-card-header>
+      <img class="logo" width="50" md-card-avatar [src]="user.avatar">
+      <md-card-title>{{ user.name || '(no user name)' }}</md-card-title>
+      <md-card-subtitle>{{ user.email || '(no email)' }}</md-card-subtitle>
+    </md-card-header>
+
+    <md-card-content>
+      <p>You are logged in using <strong>{{ user.provider }}</strong></p>
+    </md-card-content>
+    <md-card-actions>
+      <button id="logout-btn" md-raised-button (click)="logout()">
+         Logout
+       </button>
+    </md-card-actions>
+  </md-card>
+  <md-card id="msg-container">
+    <md-card-header>
+      <md-card-title>Messages</md-card-title>
+    </md-card-header>
+    <md-card-content>
+        <div class="message-container" *ngFor="let msg of messages">
+          <div class="spacing">
+            <div class="pic">
+              <img [hidden]="!msg.photoUrl" [src]="msg.photoUrl">
+            </div>
+          </div>
+          <div class="message">{{msg.text}}</div>
+          <div class="name">{{msg.name}}</div>
+        </div>
+        <form #f="ngForm" id="form-message" (ngSubmit)="sendMessage()">
+        <div>
+          <input type="text" placeholder="Message..." id="messages" name="message" [(ngModel)]="message" required>
+        </div>
+
+        <button id="submit" type="submit" [disabled]="!f.valid" md-raised-button>
+          Send
+        </button>
+        </form>
+    </md-card-content>
+  </md-card>
+</section>

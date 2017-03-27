@@ -1,0 +1,132 @@
+md-toolbar.extend-toolbar {
+  background-color: #0168AB;
+  top: 0px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  width: 100%;
+  z-index: 1;
+  color: white;
+  margin-bottom: 10px;
+}
+
+md-toolbar .flex {
+  flex: 1 1 auto;
+}
+
+md-toolbar a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  margin: 0px 10px 0px 10px;
+  border-bottom: 2px solid transparent;
+  font-size: 1.1em;
+  font-weight: normal;
+  font-family: 'Open Sans', sans-serif;
+}
+
+md-toolbar a:not(.active):hover {
+  border-bottom: 2px solid white;
+}
+
+md-toolbar a img {
+  height: 100%;
+  margin-left: -60px;
+}
+
+md-toolbar-row:nth-child(1) {
+  margin-bottom: 66px;
+}
+md-toolbar-row:nth-child(2) {
+  padding-left: 30px;
+  text-align: center;
+  height: 56px;
+  margin-top: 56px;
+}
+
+.logo {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+button {
+    background: #007fff;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+#home-screen {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.message-container {
+  display: block;
+  margin-top: 10px;
+  border-top: 1px solid #f3f3f3;
+  padding-top: 10px;
+  transition: opacity 1s ease-in-out;
+}
+.message-container.visible {
+  opacity: 1;
+}
+.message-container .pic {
+  background-image: url('/assets/images/profile_placeholder.png');
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  border-radius: 20px;
+}
+.message-container .spacing {
+  display: table-cell;
+  vertical-align: top;
+}
+.message-container .message {
+  display: table-cell;
+  width: calc(100% - 40px);
+  padding: 5px 0 5px 10px;
+}
+.message-container .name {
+  display: inline-block;
+  width: 100%;
+  padding-left: 40px;
+  color: #bbb;
+  font-style: italic;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+#messages {
+  overflow-y: auto;
+  margin-bottom: 10px;
+  height: calc(100% - 80px);
+  width: 50%;
+  padding: 0 10px;
+}
+#submit {
+    width: 80px;
+    padding: 0px;
+    margin: 0px;
+}
+#logout-btn {
+    width: 80px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.pic img{
+    width: 30px;
+    border-radius: 50%;
+}
+
+button:disabled,
+button[disabled] {
+    background: #e3e3e3;
+}
+
+#form-message {
+    margin-top: 10px;
+}
