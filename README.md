@@ -20,7 +20,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Generate service worker
 
-Run `npm run sw` to generate service-worker.js using sw-precache
+Run `npm run sw` to generate service-worker.js via [sw-precache](https://github.com/GoogleChrome/sw-precache).
 
 ## Running end-to-end tests
 
