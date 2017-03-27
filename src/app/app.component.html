@@ -47,7 +47,7 @@
         </div>
         <form #f="ngForm" id="form-message" (ngSubmit)="sendMessage()">
         <div>
-          <input type="text" placeholder="Message..." id="messages" name="message" [(ngModel)]="message" required>
+          <input type="text" placeholder="Enter your message here..." id="messages" name="message" [(ngModel)]="message" required>
         </div>
 
         <button id="submit" type="submit" [disabled]="!f.valid" md-raised-button>

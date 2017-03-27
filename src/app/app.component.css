@@ -103,8 +103,9 @@ button {
   overflow-y: auto;
   margin-bottom: 10px;
   height: calc(100% - 80px);
-  width: 50%;
-  padding: 0 10px;
+  width: 100%;
+  padding: 0 0 0 10px;
+  font-size: 14px;
 }
 #submit {
     width: 80px;
